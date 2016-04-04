@@ -1,0 +1,25 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.bmuschko:gradle-tomcat-plugin:2.2.4'
+    }
+}
+
+apply plugin: 'war'
+apply plugin: 'com.bmuschko.tomcat'
+
+dependencies {
+    providedCompile group:
+        'javax.servlet', name: 'javax.servlet-api', version:'3.0.1'
+
+    compile project(':hello-gradle-core')
+
+    def tomcatVersion = '7.0.59'
+
+    tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
+            "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}",
+            "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}"
+}

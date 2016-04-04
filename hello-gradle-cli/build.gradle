@@ -1,0 +1,14 @@
+apply plugin: 'application'
+
+mainClassName = 'net.wickedshell.hellogradle.cli.HelloGradleCLI'
+
+dependencies {
+
+    compile project(':hello-gradle-core')
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'net.wickedshell.hellogradle.cli.HelloGradleCLI'
+    }
+}

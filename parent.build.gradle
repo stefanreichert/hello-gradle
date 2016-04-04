@@ -1,0 +1,25 @@
+allprojects {
+
+    group 'net.wickedshell'
+    version '0.1-SNAPSHOT'
+
+    apply plugin: 'java'
+}
+
+subprojects {
+
+	sourceCompatibility = 1.8
+
+	repositories {
+		mavenCentral()
+		jcenter()
+	}
+
+	dependencies {
+		testCompile group:
+		'junit', name: 'junit', version: '4.+'
+
+		testCompile group:
+		'org.mockito', name: 'mockito-core', version: '1.+'
+	}
+}
