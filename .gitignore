@@ -3,3 +3,11 @@ build
 .DS_Store
 .gradle
 .idea
+
+# classes #
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
